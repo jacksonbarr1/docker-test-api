@@ -1,7 +1,15 @@
 spring:
-  profile: dev
+  profiles:
+    active: test
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
 version: "Dev"
 ---
 spring:
-  profile: latest
+  config:
+    activate:
+      on-profile: test
 version: "Latest"

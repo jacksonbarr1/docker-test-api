@@ -1,0 +1,7 @@
+spring:
+  profile: dev
+version: "Dev"
+---
+spring:
+  profile: latest
+version: "Latest"

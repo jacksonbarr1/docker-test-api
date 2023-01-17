@@ -6,4 +6,6 @@ import org.springframework.stereotype.Service;
 @Service
 public interface CustomerService {
     Customer findById(int id);
+
+    Customer addCustomer(Customer customer);
 }

@@ -8,14 +8,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
+    @Autowired
     private CustomerRepository customerRepository;
+
 
     public Customer findById(int id) {
         return customerRepository.findById(id).orElse(null);
     }
 
-    @Override
-    public Customer addCustomer(Customer customer) {
+    public Customer saveCustomer(Customer customer) {
         return customerRepository.save(customer);
     }
 }

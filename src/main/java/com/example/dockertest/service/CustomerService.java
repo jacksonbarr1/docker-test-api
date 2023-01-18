@@ -7,5 +7,5 @@ import org.springframework.stereotype.Service;
 public interface CustomerService {
     Customer findById(int id);
 
-    Customer addCustomer(Customer customer);
+    Customer saveCustomer(Customer customer);
 }

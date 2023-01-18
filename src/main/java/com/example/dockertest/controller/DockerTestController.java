@@ -30,4 +30,9 @@ public class DockerTestController {
     public Customer findById(@PathVariable int id) {
         return customerService.findById(id);
     }
+
+    @PostMapping("/customer")
+    public Customer saveCustomer(@RequestBody Customer customer) {
+        return customerService.saveCustomer(customer);
+    }
 }

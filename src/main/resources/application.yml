@@ -1,13 +1,13 @@
 spring:
   profiles:
-    active: test
+    active: dev
 server:
   port: 8082
 ---
 spring:
   config:
     activate:
-      on-profile: docker
+      on-profile: dev
   jpa:
     hibernate:
       ddl-auto: update
@@ -16,21 +16,8 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
   datasource:
-    url: jdbc:mysql://mysqldb:3306/customer_db
+    url: jdbc:mysql://mysql:3306/customer_db?useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: root
-version: "Docker"
----
-spring:
-  config:
-    activate:
-      on-profile: test
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-  datasource:
-    url: jdbc:mysql://localhost:3306/customer_db
-    username: root
-    password: root
-version: "Test"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+

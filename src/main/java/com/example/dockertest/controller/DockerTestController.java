@@ -13,17 +13,9 @@ public class DockerTestController {
     @Autowired
     private CustomerService customerService;
 
-    @Value("${version}")
-    private String version;
-
     @GetMapping("/")
     public String home() {
-        return "Hello Docker\nVersion: " + version;
-    }
-
-    @PostMapping("/customer")
-    public Customer addCustomer(@RequestBody Customer customer) {
-        return customerService.addCustomer(customer);
+        return "Hello Docker";
     }
 
     @GetMapping("/{id}")
